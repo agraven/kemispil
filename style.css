@@ -1,0 +1,54 @@
+body {
+	background-image: url(image/baggrund.png);
+}
+h1 {
+	font-family: "DejaVu Sans", sans, sans-serif;
+}
+.box {
+	background: #08F;
+	color: #FFF;
+	margin: 0.5em;
+	padding: 0.5em;
+	font-family: Arial, "Liberation Sans", sans, sans-serif;
+}
+.box a {
+	font-style: normal;
+	text-decoration: none;
+}
+.box a:link {
+	color: #FD1;
+}
+.box a:hover {
+	color: #FE2;
+}
+.box a:visited {
+	color: #EC0;
+}
+.linkbutton {
+	display: inline-block;
+	width: 100 px;
+	color: #000;
+	background: #DDD;
+	font-weight: bold;
+	border-radius: 3 px;
+	padding: 0.2 em;
+}
+a.linkbutton:link {
+	color: #000;
+}
+a.linkbutton:hover {
+	background: #AAA;
+	color: #000;
+}
+a.linkbutton:visited {
+	color: #000;
+}
+#container {
+	width: 100%;
+	max-width: 50em;
+	margin: auto;
+	margin-top: 3em;
+}
+#copyright {
+	font-size: smaller;
+}
