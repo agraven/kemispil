@@ -9,38 +9,45 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="w3.css">
 	<link rel="icon" type="image/png" href="image/icon.png">
 	<link rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
 </head>
 <body>
 	<div id="container">
-		<h1 id="mainheader">Kemispil</h1>	
-		<div class="box" id="content">
+		<div class="w3-container w3-margin">
+			<img src="image/kolbe.png" alt="logo" width="100" height="100" class="middle-left"><h1 id="mainheader">Kemispil</h1>	
+		</div>
+		<div class="w3-container w3-margin w3-padding-16 w3-green">
+			<ul class="navbar">
+				<li><a class="active">Hjem</a></li>
+				<li><a href="about">Om</a></li>
+			</ul>
+		</div>
+		<div class="w3-container w3-margin w3-pading-16 w3-teal" id="content">
 			<h2>Testen</h2>
 			<h3>Syrer og baser</h3>
-			<form class="question">
+			<form class="question" method="post" action="result.html">
 				<h4>Hvad er definitionen på en syre?</h4>
-				<input type="radio" name="question1" value="option1" checked> Et stof der kan afgive et hydron
-				<input type="radio" name="question1" value="option2"> En væske med en pH-værdi under 7
-				<input type="radio" name="question1" value="option3"> En væske med en pH-værdi over 7
-				<input type="radio" name="question1" value="option4"> En væske der lugter skarpt
-			</form>
-			<form class="question">
+					<div><input type="radio" name="question1" value="option1" checked> Et stof der kan afgive et hydron</div>
+					<div><input type="radio" name="question1" value="option2"> En væske med en pH-værdi under 7</div>
+					<div><input type="radio" name="question1" value="option3"> En væske med en pH-værdi over 7</div>
+					<div><input type="radio" name="question1" value="option4"> En væske der lugter skarpt</div>
+
 				<h4>Hvad er definitionen på en base?</h4>
 				<input type="radio" name="question2" value="option1" checked> Et stof der kan afgive et hydron
 				<br/><input type="radio" name="question2" value="option2"> En væske med en pH-værdi under 7
 				<br/><input type="radio" name="question2" value="option3"> En væske med en pH-værdi over 7
 				<br/><input type="radio" name="question2" value="option4"> En væske der lugter skarpt
-			</form>
-			<form class="question">
-				<h4>Hvad er definitionen på en base?</h4>
+
+				<br><h4>Hvad er definitionen på en base?</h4>
 				<input type="radio" name="question3" value="option1" checked> Et stof der kan afgive et hydron
 				<br/><input type="radio" name="question3" value="option2"> En væske med en pH-værdi under 7
 				<br/><input type="radio" name="question3" value="option3"> En væske med en pH-værdi over 7
 				<br/><input type="radio" name="question3" value="option4"> En væske der lugter skarpt
 			</form>
 		</div>
-		<div class="box" id="copyright">
+		<div class="w3-container w3-margin" id="copyright">
 			Copyright © Amanda Graven et al. 2017.
 			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
 				<img alt="Creative Commons License" style="border-width: 0; float: right;" width="88" height="31" src="image/by-nc-sa.svg"/>

@@ -26,6 +26,11 @@ h1 {
 	color: #EC0;
 }
 
+.middle-left {
+	vertical-align: middle;
+	float: left;
+}
+
 .linkbutton {
 	padding: 0.2em;
 	margin: 0;
@@ -51,16 +56,20 @@ a.linkbutton:active {
 	color: #000;
 }
 
-.question input[type=radio] {
+.question div {
 	box-sizing: border-box;
 	display: block;
 	float: left;
 	width: 25%;
 }
 
+div ~ h4 {
+	padding-top: 3ex;
+}
+
 #container {
 	width: 100%;
-	max-width: 50em;
+	max-width: 65em;
 	margin: auto;
 	margin-top: 3em;
 }
@@ -68,8 +77,9 @@ a.linkbutton:active {
 	font-size: smaller;
 }
 #mainheader {
-	background-image: url(image/kolbe.png);
-	background-position: 50px 50px; 
+	overflow: hidden;
+	margin: auto;
+	padding: auto;
 }
 
 ul.navbar {
