@@ -26,6 +26,13 @@ h1 {
 	color: #EC0;
 }
 
+.padding-none {
+	padding: 0;
+}
+.padding-8 {
+	padding: 16px 8px;
+}
+
 .middle-left {
 	vertical-align: middle;
 	float: left;
@@ -56,11 +63,14 @@ a.linkbutton:active {
 	color: #000;
 }
 
-.question div {
+.question .option {
 	box-sizing: border-box;
+	padding: inherit;
 	display: block;
 	float: left;
 	width: 25%;
+	overflow: hidden;
+	transition: background-color 1s;
 }
 
 div ~ h4 {
