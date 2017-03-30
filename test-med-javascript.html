@@ -16,40 +16,85 @@
 	<script>
 		var points = 0;
 		function correct() {
-			
+			points = points + 1;
 		}
+		function wrong() { alert("You suck :P"); }
 		function settext(id, text) {
-			document.getElementById(id).style.transition = "opacity 0.3s";
+			document.getElementById(id).style.transition = "opacity 0.4s";
 			document.getElementById(id).style.opacity = "0";
-			document.getElementById(id).innerHTML = text;
-			document.getElementById(id).style.opacity = "1";
+			setTimeout(function(){
+				document.getElementById(id).innerHTML = text;
+				document.getElementById(id).style.opacity = "1";
+			}, 400);
+		}
+		function q5answered(ans) {
+			if (ans === 3) { correct(); } else { wrong(); };
+			// Begin Q5
+			document.getElementById("answer-container-1").style.display = "none";
+			document.getElementById("answer-container-2").style.display = "none";
+		}
+		function q4answered(ans) {
+			if (ans === 2) { correct(); } else { wrong(); };
+			// Begin Q5
+			settext("question-content", "Hvad kendetegner en amfolyt?");
+			settext("answer-1", "En amfolyt er hverken en syre eller en base");
+			settext("answer-2", "En amfolyt kan kun være en base");
+			settext("answer-3", "Den kan reagere både som en syre og en base");
+			settext("answer-4", "Den er hverken en syre eller base");
+			document.getElementById("answer-1").onclick = function(){ q5answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q5answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q5answered(3); };
+			document.getElementById("answer-4").onclick = function(){ q5answered(4); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
+		}
+		function q3answered(ans) {
+			if (ans === 3) { correct(); } else { wrong(); };
+			// Begin Q4
+			settext("question-content", "Hvad er reaktionsskemaet for vands autohydronoverførsel?");
+			settext("answer-1", "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + H<sub>2</sub>O → H<sub>3</sub>O<sup>+</sup> + CO<sub>2</sub> + OH<sup>-</sup>");
+			settext("answer-2", "2 H<sub>2</sub>O ⇌ H<sub>3</sub>O<sup>+</sup> + OH<sup>-</sup>");
+			settext("answer-3", "H<sub>2</sub>O + CO<sub>2</sub> ⇌ CH<sub>4</sub> + O<sub>2</sub>");
+			settext("answer-4", "HCl + KOH ⇌ KCl<sup>-</sub> + H<sub>2</sub>O");
+			document.getElementById("answer-1").onclick = function(){ q4answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q4answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q4answered(3); };
+			document.getElementById("answer-4").onclick = function(){ q4answered(4); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
 		}
 		function q2answered(ans) {
-			if (ans == 3) { points + 1; }
-			document.getElementById("question-content").innerHTML = "Hvad er unikt ved en flerhydron syre?";
-			document.getElementById("answer-1").innerHTML = "At den har flere H+-ioner";
-			document.getElementById("answer-2").innerHTML = "At den er fortyndet med vand";
-			document.getElementById("answer-3").innerHTML = "At den er en blanding af flere syrer";
-			document.getElementById("answer-4").innerHTML = "At den indeholder neonhydrat";
+			if (ans === 4) { correct(); } else { wrong(); };
+			// Begin Q3
+			settext("question-content", "Hvad er unikt ved en flerhydron syre?");
+			settext("answer-1", "At den er en blanding af flere syrer");
+			settext("answer-2", "At den kan afgive en hydron");
+			settext("answer-3", "At den kan afgive flere end en hydron");
+			settext("answer-4", "At den forbliver samme stof selvom den afgiver flere hydroner");
+			document.getElementById("answer-1").onclick = function(){ q3answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q3answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q3answered(3); };
+			document.getElementById("answer-4").onclick = function(){ q3answered(4); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
 		}
 		function q1answered(ans) {
-			if (ans == 1) { points = points + 1; }
-			document.getElementById("question-content").innerHTML = "Hvad er definitionen på en base?";
-			document.getElementById("answer-1").innerHTML = "Et stof der kan optage et hydron";
-			document.getElementById("answer-2").innerHTML = "En væske med en pH-værdi under 7";
-			document.getElementById("answer-3").innerHTML = "En væske med en pH-værdi over 7";
-			document.getElementById("answer-4").innerHTML = "En væske der lugter skarpt";
-			document.getElementById("answer-1").onclick = function(){ q2answered(1); }
-			document.getElementById("answer-2").onclick = function(){ q2answered(2); }
-			document.getElementById("answer-3").onclick = function(){ q2answered(3); }
-			document.getElementById("answer-4").onclick = function(){ q2answered(4); }
+			if (ans === 1) { correct(); } else { wrong(); };
+			// Begin Q2
+			settext("question-content", "Hvad er definitionen på en base?");
+			settext("answer-1", "En væske der smager bittert");
+			settext("answer-2", "En væske med en pH-værdi under 7");
+			settext("answer-3", "En væske med en pH-værdi over 7");
+			settext("answer-4", "Et stof der kan optage et hydron");
+			document.getElementById("answer-1").onclick = function(){ q2answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q2answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q2answered(3); };
+			document.getElementById("answer-4").onclick = function(){ q2answered(4); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
 		}
 	</script>
 </head>
 <body>
 	<div class="flex flex-stretch flex-column fixed fill">
 		<div id="question-container" class="flex-3 quiz-button w3-blue">
-			<div class="fill-margin"><h1 id="question-content">Hvad er definitionen på en syre?</h1></div>
+			<h1 id="question-content">Hvad er definitionen på en syre?</h1>
 			<div class="point-counter" id="point-counter">Point: 0</div>
 		</div>
 		<div id="answer-container-1" class="flex-1">

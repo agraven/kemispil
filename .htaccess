@@ -1,4 +1,5 @@
 <IfModule rewrite_module>
 	RewriteEngine On
 	RewriteRule "^/about$" "/about.html"
+	RewriteRule "^/test$" "/test-med-javascript.html"
 </IfModule>
