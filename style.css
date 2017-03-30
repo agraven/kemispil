@@ -48,7 +48,7 @@ h1 {
 .flex-4 { flex: 4; }
 
 .quiz-button-container { display: -webkit-flex; display: flex; flex-wrap: wrap; box-sizing: border-box; width: 100%; height: 100%; }
-.quiz-button {}
+.quiz-button { margin: 8px; border-radius: 16px; padding: 16px;  }
 
 .middle { vertical-align: middle; }
 
