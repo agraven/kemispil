@@ -12,30 +12,64 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="icon" type="image/png" href="image/icon.png">
 	<link rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<script>
+		var points = 0;
+		function correct() {
+			
+		}
+		function settext(id, text) {
+			document.getElementById(id).style.transition = "opacity 0.3s";
+			document.getElementById(id).style.opacity = "0";
+			document.getElementById(id).innerHTML = text;
+			document.getElementById(id).style.opacity = "1";
+		}
+		function q2answered(ans) {
+			if (ans == 3) { points + 1; }
+			document.getElementById("question-content").innerHTML = "Hvad er unikt ved en flerhydron syre?";
+			document.getElementById("answer-1").innerHTML = "At den har flere H+-ioner";
+			document.getElementById("answer-2").innerHTML = "At den er fortyndet med vand";
+			document.getElementById("answer-3").innerHTML = "At den er en blanding af flere syrer";
+			document.getElementById("answer-4").innerHTML = "At den indeholder neonhydrat";
+		}
+		function q1answered(ans) {
+			if (ans == 1) { points = points + 1; }
+			document.getElementById("question-content").innerHTML = "Hvad er definitionen på en base?";
+			document.getElementById("answer-1").innerHTML = "Et stof der kan optage et hydron";
+			document.getElementById("answer-2").innerHTML = "En væske med en pH-værdi under 7";
+			document.getElementById("answer-3").innerHTML = "En væske med en pH-værdi over 7";
+			document.getElementById("answer-4").innerHTML = "En væske der lugter skarpt";
+			document.getElementById("answer-1").onclick = function(){ q2answered(1); }
+			document.getElementById("answer-2").onclick = function(){ q2answered(2); }
+			document.getElementById("answer-3").onclick = function(){ q2answered(3); }
+			document.getElementById("answer-4").onclick = function(){ q2answered(4); }
+		}
+	</script>
 </head>
 <body>
 	<div class="flex flex-stretch flex-column fixed fill">
-		<div class="flex-3 margin-8 margin-16-top w3-round-large w3-padding-large w3-blue">
-			<h1>Spørgsmål</h1>
+		<div id="question-container" class="flex-3 quiz-button w3-blue">
+			<div class="fill-margin"><h1 id="question-content">Hvad er definitionen på en syre?</h1></div>
+			<div class="point-counter" id="point-counter">Point: 0</div>
 		</div>
-		<div class="flex-1">
+		<div id="answer-container-1" class="flex-1">
 			<div class="quiz-button-container">
-				<div class="flex-1 quiz-button w3-red">
-					Option
-				</div>
-				<div class="flex-1 quiz-button w3-indigo">
-					Option
-				</div>
+				<button class="flex-1 quiz-button w3-red" id="answer-1" onclick="q1answered(1)">
+					Et stof der kan afgive et hydron
+				</button>
+				<button class="flex-1 quiz-button w3-indigo" id="answer-2" onclick="q1answered(2)">
+					En væske med en pH-værdi over 7
+				</button>
 			</div>
 		</div>
-		<div class="flex-1">
+		<div id="answer-container-2" class="flex-1">
 			<div class="flex flex-wrap fill">
-				<div class="flex-1 quiz-button w3-teal">
-					Option
-				</div>
-				<div class="flex-1 quiz-button w3-black">
-					Option
-				</div>
+				<button class="flex-1 quiz-button w3-teal" id="answer-3" onclick="q1answered(3)">
+					En væske med en pH-værdi under 7
+				</button>
+				<button class="flex-1 quiz-button w3-black" id="answer-4" onclick="q1answered(4)">
+					En væske der smager surt
+				</button>
 			</div>
 		</div>
 	</div>
