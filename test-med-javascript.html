@@ -18,7 +18,7 @@
 		function correct() {
 			points = points + 1;
 		}
-		function wrong() { alert("You suck :P"); }
+		function wrong() {  }
 		function settext(id, text) {
 			document.getElementById(id).style.transition = "opacity 0.4s";
 			document.getElementById(id).style.opacity = "0";
@@ -27,11 +27,122 @@
 				document.getElementById(id).style.opacity = "1";
 			}, 400);
 		}
+		function q13answered(ans) {
+			if (ans === 3) { correct(); } else { wrong(); };
+			document.getElementById("answer-container-1").style.display = 'none';
+			document.getElementById("answer-container-2").style.display = 'none';
+			document.getElementById("question-content").innerHTML = "Tillykke! Du fik "+points+" Point.";
+			document.getElementById("point-counter").innerHTML = '<a href="..">Tilbage til startsiden</a>';
+		}
+		function q12answered(ans) {
+			if (ans === 3) { correct(); } else { wrong(); };
+			// begin Q11
+			settext("question-content", "Hvad definerer en stærk base?");
+			settext("answer-1", "Stoffet har en stærk fordamation");
+			settext("answer-2", "Hele stoffet bliver opløst i vand og danner mange oxium-ioner");
+			settext("answer-3", "At den maksimale mængde af vib-ioner bliver opløst i stoffet");
+			document.getElementById("answer-4").style.display = 'none';
+			document.getElementById("answer-1").onclick = function(){ q13answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q13answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q13answered(3); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
+		}
+		function q11answered(ans) {
+			if (ans === 1) { correct(); } else { wrong(); };
+			// begin Q11
+			settext("question-content", "Hvad definerer en stærk syre?");
+			settext("answer-1", "Den inducerer smerte eller alvorlig skade med kontakt med huden");
+			settext("answer-2", "Den er blevet defineret som en af en standardiseringsorganisation");
+			settext("answer-3", "Hele stoffet bliver opløst i vand og danner mange oxium-ioner");
+			document.getElementById("answer-4").style.display = 'none';
+			document.getElementById("answer-1").onclick = function(){ q12answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q12answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q12answered(3); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
+		}
+		function q10answered(ans) {
+			if (ans === 1) { correct(); } else { wrong(); };
+			// begin Q11
+			settext("question-content", "Hvilken af disse stoffer er korresponerende base til svovlsyre? (H<sub>2</sub>SO<sub>4</sub>");
+			settext("answer-1", "HSO<sub>4</sub><sup>-</sup>");
+			settext("answer-2", "OH<sup>-</sup>");
+			settext("answer-3", "H<sub>2</sub>OP<sub>4<sup>2-</sup>");
+			settext("answer-4", "H<sub>4</sub>Cl<sub>2</sub><sup>-</sup>");
+			document.getElementById("answer-1").onclick = function(){ q11answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q11answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q11answered(3); };
+			document.getElementById("answer-4").onclick = function(){ q11answered(4); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
+		}
+		function q9answered(ans) {
+			if (ans === 4) { correct(); } else { wrong(); };
+			// begin Q10
+			settext("question-content", "Hvad er produktet af to ionkoncentrationer?");
+			settext("answer-1", "1×10<sup>-14</sup> × M<sup>2</sup>");
+			settext("answer-2", "1,29 kg/m<sup>3</sup>");
+			settext("answer-3", "9,82 mol/m<sup>3");
+			settext("answer-4", "8,31 Pa×m<sup>3</sup>/mol×K");
+			document.getElementById("answer-1").onclick = function(){ q10answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q10answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q10answered(3); };
+			document.getElementById("answer-4").onclick = function(){ q10answered(4); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
+		}
+		function q8answered(ans) {
+			if (ans === 3) { correct(); } else { wrong(); };
+			// begin Q9
+			settext("question-content", "Hvad kaldes det produkt man får hvis man ganger to ioners koncentration?");
+			settext("answer-1", "Baseproduktet");
+			settext("answer-2", "Lucios første konstant");
+			settext("answer-3", "Ionsummen");
+			settext("answer-4", "Vands ionprodukt");
+			document.getElementById("answer-1").onclick = function(){ q9answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q9answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q9answered(3); };
+			document.getElementById("answer-4").onclick = function(){ q9answered(4); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
+		}
+		function q7answered(ans) {
+			if (ans === 1) { correct(); } else { wrong(); };
+			// begin Q8
+			settext("question-content", "Kan et stof være basisk og surt på samme tid?");
+			settext("answer-1", "Kun hvis det har en temperatur over 373 K");
+			settext("answer-2", "Kun i fast form");
+			settext("answer-3", "Ja");
+			settext("answer-4", "Nej");
+			document.getElementById("answer-1").onclick = function(){ q8answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q8answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q8answered(3); };
+			document.getElementById("answer-4").onclick = function(){ q8answered(4); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
+		}
+		function q6answered(ans) {
+			if (ans === 4) { correct(); } else { wrong(); };
+			// begin Q7
+			settext("question-content", "Hvordan bestemmer man om et stof er surt eller basisk?");
+			settext("answer-1", "Måler om stoffet danner H<sub>3</sub>O<sup>+</sup>");
+			settext("answer-2", "Ved at smage på det");
+			settext("answer-3", "Blander det med henholdsvis en base eller syre for at se om det danner salt");
+			settext("answer-4", "Bruger sinus til at beregne mængden af hypotenuse i stoffet");
+			document.getElementById("answer-1").onclick = function(){ q7answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q7answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q7answered(3); };
+			document.getElementById("answer-4").onclick = function(){ q7answered(4); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
+		}
 		function q5answered(ans) {
 			if (ans === 3) { correct(); } else { wrong(); };
-			// Begin Q5
-			document.getElementById("answer-container-1").style.display = "none";
-			document.getElementById("answer-container-2").style.display = "none";
+			// Begin Q6
+			settext("question-content", "Hvilke af disse stoffer er en amfolyt?");
+			settext("answer-1", "HCl");
+			settext("answer-2", "O<sup>2-</sup>");
+			settext("answer-3", "NO<sub>3</sub><sup>-</sup>");
+			settext("answer-4", "HCO<sub>3</sub><sup>-</sup>");
+			document.getElementById("answer-1").onclick = function(){ q6answered(1); };
+			document.getElementById("answer-2").onclick = function(){ q6answered(2); };
+			document.getElementById("answer-3").onclick = function(){ q6answered(3); };
+			document.getElementById("answer-4").onclick = function(){ q6answered(4); };
+			document.getElementById("point-counter").innerHTML = "Point: " + points;
 		}
 		function q4answered(ans) {
 			if (ans === 2) { correct(); } else { wrong(); };
@@ -54,7 +165,7 @@
 			settext("answer-1", "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + H<sub>2</sub>O → H<sub>3</sub>O<sup>+</sup> + CO<sub>2</sub> + OH<sup>-</sup>");
 			settext("answer-2", "2 H<sub>2</sub>O ⇌ H<sub>3</sub>O<sup>+</sup> + OH<sup>-</sup>");
 			settext("answer-3", "H<sub>2</sub>O + CO<sub>2</sub> ⇌ CH<sub>4</sub> + O<sub>2</sub>");
-			settext("answer-4", "HCl + KOH ⇌ KCl<sup>-</sub> + H<sub>2</sub>O");
+			settext("answer-4", "HCl + KOH ⇌ KCl<sup>-</sup> + H<sub>2</sub>O");
 			document.getElementById("answer-1").onclick = function(){ q4answered(1); };
 			document.getElementById("answer-2").onclick = function(){ q4answered(2); };
 			document.getElementById("answer-3").onclick = function(){ q4answered(3); };
